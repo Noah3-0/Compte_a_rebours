@@ -11,15 +11,15 @@ form.addEventListener("submit", (e) => {
   totalSeconds = choice.value * 60;
   minutes = Math.floor(totalSeconds / 60);
   seconds = totalSeconds % 60;
-  form.innerHTML += `<h1>${minutes} : ${seconds}</h1>`;
+  countdownDisplay.textContent = `${minutes} : ${seconds}`;
   const loop = () => {
     if (seconds === 0 && minutes >= 1) {
       minutes--;
       seconds = 59;
-      form.innerHTML = `<h1>${minutes} : ${seconds}</h1>`;
+      countdownDisplay.textContent = `${minutes} : ${seconds}`;
     } else if (seconds <= 59) {
       seconds--;
-      form.innerHTML = `<h1>${minutes} : ${seconds}</h1>`;
+      countdownDisplay.textContent = `${minutes} : ${seconds}`;
     }
     // form.innerHTML = `<h1>FIN</h1>`;
   };
